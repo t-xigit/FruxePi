@@ -28,7 +28,7 @@ RUN git clone https://github.com/WiringPi/WiringPi.git &&\
   cd WiringPi && \
   ./build && cd ..
 
-RUN git https://github.com/t-xigit/pyt-8-Way-Relay-Board.git && \
+RUN git clone https://github.com/t-xigit/pyt-8-Way-Relay-Board.git && \
   cd pyt-8-Way-Relay-Board && \
   pip install -r requirements.txt
 
