@@ -30,6 +30,7 @@ services:
       - /dev/gpiomem:/dev/gpiomem
       - /dev/vchiq:/dev/vchiq
       - /dev/vcsm:/dev/vcsm
+      - /dev/ttyUSB0:/dev/ttyUSB0
     ports:
       - 80:80/tcp
     volumes:

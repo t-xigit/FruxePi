@@ -26,7 +26,12 @@ RUN apt-get install -y sudo && \
 # WiringPi Install
 RUN git clone https://github.com/WiringPi/WiringPi.git &&\
   cd WiringPi && \
-  ./build
+  ./build && \
+  cd ..
+
+RUN git git@github.com:t-xigit/pyt-8-Way-Relay-Board.git && \
+  cd pyt-8-Way-Relay-Board && \
+  pip install -r requirements.txt
 
 # CRON Setup
 ADD crontab /tmp/crontab
