@@ -1,9 +1,11 @@
 # FruxePi
-* * * * * LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/python /var/www/html/actions/fruxepi.py update -growdata
-0 * * * * LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/python /var/www/html/actions/fruxepi.py update -chart
-0 1 * * * LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/python /var/www/html/actions/fruxepi.py maint -cleanup
-#* * * * * LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/python /var/www/html/actions/fruxepi.py camera -crop
-#0 1 * * * LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/python /var/www/html/actions/fruxepi.py lights -ON 15
-#0 1 * * * LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/python /var/www/html/actions/fruxepi.py lights -OFF 15
-#0 * * * * LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/python /var/www/html/actions/fruxepi.py fan -RUN 17 10
-#11 11 * * * LC_ALL=C.UTF-8 LANG=C.UTF-8 /usr/local/bin/python /var/www/html/actions/fruxepi.py pump -RUN 18 5
+LC_ALL=C.UTF-8 
+LANG=C.UTF-8
+* * * * * /usr/local/bin/python /var/www/html/actions/fruxepi.py update -growdata
+0 * * * * /usr/local/bin/python /var/www/html/actions/fruxepi.py update -chart
+0 1 * * * /usr/local/bin/python /var/www/html/actions/fruxepi.py maint -cleanup
+#* * * * * /usr/local/bin/python /var/www/html/actions/fruxepi.py camera -crop
+#0 1 * * * /usr/local/bin/python /var/www/html/actions/fruxepi.py lights -ON 15
+#0 1 * * * /usr/local/bin/python /var/www/html/actions/fruxepi.py lights -OFF 15
+#0 * * * * /usr/local/bin/python /var/www/html/actions/fruxepi.py fan -RUN 17 10
+#11 11 * * * /usr/local/bin/python /var/www/html/actions/fruxepi.py pump -RUN 18 5
