@@ -431,9 +431,11 @@ def lightsON(gpioPIN, reverseRelay):
     if reverseRelay:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
+        os.system("python k8_box.py set-relay -r " + str(gpioPIN) + " -s 0")
     else:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 1")
+        os.system("python k8_box.py set-relay -r " + str(gpioPIN) + " -s 1")
 
 # Lights OFF
 def lightsOFF(gpioPIN, reverseRelay):
