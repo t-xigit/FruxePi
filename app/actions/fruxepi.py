@@ -343,9 +343,11 @@ def fanON(gpioPIN, reverseRelay):
     if reverseRelay:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
     else:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 1")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
 
 # Fan OFF
 def fanOFF(gpioPIN, reverseRelay):
@@ -353,9 +355,11 @@ def fanOFF(gpioPIN, reverseRelay):
     if reverseRelay:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 1")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
     else:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
 
 # Fetch fan threshold DB data
 def fetchFanThresholdDBData():
@@ -413,12 +417,14 @@ def heaterON(gpioPIN):
     print("Heater ON")
     os.system("gpio -g mode " + str(gpioPIN) + " out")
     os.system("gpio -g write " + str(gpioPIN) + " 1")
+    os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
 
 # Heater OFF
 def heaterOFF(gpioPIN):
     print("Heater OFF")
     os.system("gpio -g mode " + str(gpioPIN) + " out")
     os.system("gpio -g write " + str(gpioPIN) + " 0")
+    os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
 
 # Heater run program
 def heaterProgram(gpioPIN, timeInterval):
@@ -456,9 +462,11 @@ def pumpON(gpioPIN, reverseRelay):
     if reverseRelay:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
     else:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 1")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
 
 # Pummp OFF
 def pumpOFF(gpioPIN, reverseRelay):
@@ -466,9 +474,11 @@ def pumpOFF(gpioPIN, reverseRelay):
     if reverseRelay:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 1")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
     else:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
 
 # Pump run program
 def pumpProgram(gpioPIN, timeInterval, reverseRelay):
