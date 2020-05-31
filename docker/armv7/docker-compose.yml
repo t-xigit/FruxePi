@@ -43,6 +43,8 @@ services:
      - db:mysql
     environment:
      RELAY_SCRIPT_PATH: "/pyt-8-Way-Relay-Board/k8_box.py"
+     LC_ALL: C.UTF-8
+     LANG: C.UTF-8
   phpmyadmin:
    container_name: frxpi-PHPMYADMIN
    depends_on:

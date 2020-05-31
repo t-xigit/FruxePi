@@ -40,6 +40,7 @@
 
 			// Get Existing CRON
 			exec('crontab -l', $output);
+			print("Changing CRON for lights");
 
 			// Loop through CRON file and find lights rows
 			for($i = 0; $i < count($output); $i++) {
@@ -51,8 +52,9 @@
 					$cronStringArray[9] = $gpioPIN;
 					$relayType == "high" && !array_key_exists(10, $cronStringArray) ? array_push($cronStringArray, "True") : false ;
 					$relayType == "" && array_key_exists(10, $cronStringArray) ? $cronStringArray[10] = "" : false ;
-
+					
 					$cronString = implode(" ", $cronStringArray);
+					
 					$output[$i] = $cronString;
 				} elseif (array_key_exists(7, $cronStringArray) == True && $cronStringArray[7] == "lights" && $cronStringArray[8] == "-OFF") {
 					$cronStringArray[0] = $minuteOFF;
@@ -62,6 +64,7 @@
 					$relayType == "" && array_key_exists(10, $cronStringArray) ? $cronStringArray[10] = "" : false ;
 
 					$cronString = implode(" ", $cronStringArray);
+
 					$output[$i] = $cronString;
 				}
 				

@@ -432,11 +432,11 @@ def lightsON(gpioPIN, reverseRelay):
     if reverseRelay:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
-        os.system("python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
     else:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 1")
-        os.system("python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
 
 # Lights OFF
 def lightsOFF(gpioPIN, reverseRelay):
@@ -444,9 +444,11 @@ def lightsOFF(gpioPIN, reverseRelay):
     if reverseRelay:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 1")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
     else:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
+        os.system("/usr/local/bin/python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
 
 # Pump ON
 def pumpON(gpioPIN, reverseRelay):
