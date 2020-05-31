@@ -25,6 +25,7 @@ user="frxpi"
 password="password"
 database="frx_db"
 
+relay_script_path = os.environ.get("RELAY_SCRIPT_PATH", "/pyt-8-Way-Relay-Board/k8_box.py")
 
 # Script Argument Checker
 if len(sys.argv) == 6:
@@ -431,11 +432,11 @@ def lightsON(gpioPIN, reverseRelay):
     if reverseRelay:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
-        os.system("python k8_box.py set-relay -r " + str(gpioPIN) + " -s 0")
+        os.system("python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 0")
     else:
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 1")
-        os.system("python k8_box.py set-relay -r " + str(gpioPIN) + " -s 1")
+        os.system("python " + relay_script_path + " set-relay -r " + str(gpioPIN) + " -s 1")
 
 # Lights OFF
 def lightsOFF(gpioPIN, reverseRelay):

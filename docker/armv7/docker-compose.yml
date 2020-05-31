@@ -41,6 +41,8 @@ services:
      - web
     links:
      - db:mysql
+    environment:
+     - RELAY_SCRIPT_PATH: "/pyt-8-Way-Relay-Board/k8_box.py"
   phpmyadmin:
    container_name: frxpi-PHPMYADMIN
    depends_on:
